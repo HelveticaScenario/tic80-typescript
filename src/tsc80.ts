@@ -112,13 +112,13 @@ function run(): void {
       process.exit(0)
     }
 
-    const cmd = `"${cTic['ticExecutable']}" "${cTic['cartsDirectory']}/${cGame['cart']}" -code ${cCompress['compressedFile']}`
+    const cmd = `"${cTic['ticExecutable']}" "${cTic['cartsDirectory']}/${cGame['cart']}" -code-watch ${cCompress['compressedFile']}`
     console.log(`Launch TIC: ${cmd}`)
 
     let child = child_process.spawn(cTic.ticExecutable,
       [
         `${cTic.cartsDirectory}/${cGame.cart}`,
-        '-code',
+        '-code-watch',
         cCompress.compressedFile
       ],
       {
